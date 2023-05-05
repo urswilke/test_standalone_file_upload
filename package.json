@@ -15,6 +15,6 @@
   "license": "ISC",
   "dependencies": {
     "fs": "^0.0.1-security",
-    "xlsx": "https://cdn.sheetjs.com/xlsx-0.19.3/xlsx-0.19.3.tgz"
+    "xlsx": "^0.18.5"
   }
 }
