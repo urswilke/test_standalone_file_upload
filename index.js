@@ -1,6 +1,27 @@
-import * as fs from "fs";
-import { readFile, set_fs } from "xlsx";
-set_fs(fs);
+import * as XLSX from "xlsx";
 
+document.getElementById("file-upload").addEventListener('change', function() {
+    var reader = new FileReader();
+    reader.onload = function() {
+        var arrayBuffer = this.result,
+            array = new Uint8Array(arrayBuffer),
+            binaryString = String.fromCharCode.apply(null, array);
 
-var workbook = readFile("test.xlsx");
+        /* Call XLSX */
+        var workbook = XLSX.read(binaryString, {
+            type: "binary"
+        });
+
+        /* DO SOMETHING WITH workbook HERE */
+        var first_sheet_name = workbook.SheetNames[0];
+        /* Get worksheet */
+        var worksheet = workbook.Sheets[first_sheet_name];
+        console.log(XLSX.utils.sheet_to_json(worksheet, {
+            raw: true
+        }));
+        // }
+
+        // oReq.send();
+    }
+    reader.readAsArrayBuffer(this.files[0]);
+});
