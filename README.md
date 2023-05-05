@@ -1,0 +1,3 @@
+- i wanted to test if it's possible to upload excel files in a standalone html app (hence the name of this repo; a misnomer)
+- it seems to be complicated (due to CORS etc.)
+- thus i turned it into a site deployed with vite (see [here](https://urswilke.github.io/test_standalone_file_upload/))
