@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-    base: '/chaos_synthetization/',  
+    base: '/test_standalone_file_upload/',  
     // from here:
     esbuild: {
         supported: {
